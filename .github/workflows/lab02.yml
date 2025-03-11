@@ -7,7 +7,10 @@ jobs:
          - run: echo "Hello Lab02!"
          - run: pip install nbconvert
          - uses: actions/checkout@v4
-         - run: sudo apt-get install pandoc
-         - run: python -m nbconvert --to pdf lab02/lab02.ipynb
+         - run: sudo apt-get install pandoc exlive-xetex
+         - uses: actions/upload-artifact@v5
+           with:
+             path: lab_01
+         - run: python -m nbconvert --to pdf lab_01/pint_and_boiling_point.ipynb
          
 
