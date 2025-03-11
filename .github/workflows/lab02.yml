@@ -6,7 +6,8 @@ jobs:
       steps:
          - run: echo "Hello Lab02!"
          - run: pip install nbconvert
-         - uses: actions/checkout@v5
+         - uses: actions/checkout@v4
          - run: sudo apt-get install pandoc
          - run: python -m nbconvert --to pdf lab02/lab02.ipynb
+         
 
