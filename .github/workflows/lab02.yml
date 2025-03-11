@@ -10,7 +10,7 @@ jobs:
          - run: sudo apt-get install pandoc exlive-xetex
          - uses: actions/upload-artifact@v4
            with:
-             path: lab_01
+             path: lab_01/pint_and_boiling_point.pdf
          - run: python -m nbconvert --to pdf lab_01/pint_and_boiling_point.ipynb
          
 
