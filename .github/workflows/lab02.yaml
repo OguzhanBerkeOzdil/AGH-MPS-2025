@@ -1,0 +1,9 @@
+name: lab02
+on: push
+jobs:
+  test:
+      runs-on: ubuntu-latest
+      steps:
+         - run: echo "Hello Lab02!"
+         - run: pip isntall nbconvert
+         - run: python -m nbconvert --to pdf lab02/lab02.ipynb
