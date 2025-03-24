@@ -12,4 +12,4 @@ jobs:
        - run: python -m nbconvert --to pdf --execute ./lab_02/mps_lab02_report.ipynb
        - uses: actions/upload-artifact@v4
          with:
-          path: lab_02/MPS-LAB.pdf
+          path: lab_02/mps_lab02_report.pdf
