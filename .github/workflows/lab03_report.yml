@@ -22,7 +22,7 @@ jobs:
           --to pdf --output "convergence_analysis_ of_upwind.pdf"
 
     - name: Upload PDF artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: upwind_report_pdf
         path: "convergence_analysis_ of_upwind.pdf"
