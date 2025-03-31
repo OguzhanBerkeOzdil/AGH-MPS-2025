@@ -18,8 +18,8 @@ jobs:
 
     - name: Execute and convert notebook to PDF
       run: |
-        jupyter nbconvert --execute ./lab_03/convergence_analysis_ of_upwind.ipynb \
-          --to pdf --output convergence_analysis_ of_upwind.pdf
+        jupyter nbconvert --execute ./lab_03/convergence_analysis_of_upwind.ipynb \
+          --to pdf --output convergence_analysis_of_upwind.pdf
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
