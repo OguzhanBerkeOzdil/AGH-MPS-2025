@@ -1,4 +1,4 @@
-name: upwind_convergence
+name: lab03_upwind_convergence
 
 on: push
 
@@ -22,11 +22,11 @@ jobs:
 
     - name: Execute and convert notebook to PDF
       run: |
-        jupyter nbconvert --to pdf --execute ./lab_03/convergence_analysis_of_upwind.ipynb \
-          --output convergence_analysis_of_upwind.pdf
+        jupyter nbconvert --to pdf --execute ./lab_03/convergence_analysis_of_upwind_v2.ipynb \
+          --output convergence_analysis_of_upwind_v2.pdf
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: upwind_report_pdf
-        path: lab_03/convergence_analysis_of_upwind.pdf
+        path: lab_03/convergence_analysis_of_upwind_v2.pdf

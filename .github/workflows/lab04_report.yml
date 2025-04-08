@@ -19,11 +19,11 @@ jobs:
 
       - name: Run notebook and convert to PDF
         run: |
-          jupyter nbconvert --to pdf --execute ./lab_02/lab02_corrected.ipynb \
-            --output lab02_corrected.pdf
+          jupyter nbconvert --to pdf --execute ./lab_02/assignment.ipynb \
+            --output assignment.pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: lab2-report
-          path: lab_02/lab02_corrected.pdf
+          path: lab_02/assignment.pdf
