@@ -28,5 +28,5 @@ jobs:
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
-        name: upwind_report_pdf
+        name: lab3-report
         path: lab_03/convergence_analysis_of_upwind_v2.pdf

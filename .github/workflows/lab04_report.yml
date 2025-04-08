@@ -25,5 +25,5 @@ jobs:
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: lab2-report
+          name: lab4-report
           path: lab_04/assignment.pdf
