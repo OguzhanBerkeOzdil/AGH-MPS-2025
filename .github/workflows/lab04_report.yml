@@ -1,4 +1,4 @@
-name: lab2
+name: lab4
 
 on: push
 
@@ -19,7 +19,7 @@ jobs:
 
       - name: Run notebook and convert to PDF
         run: |
-          jupyter nbconvert --to pdf --execute ./lab_02/assignment.ipynb \
+          jupyter nbconvert --to pdf --execute ./lab_04/assignment.ipynb \
             --output assignment.pdf
 
       - name: Upload PDF artifact
