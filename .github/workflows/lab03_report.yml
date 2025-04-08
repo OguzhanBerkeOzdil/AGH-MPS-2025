@@ -1,0 +1,32 @@
+name: upwind_convergence
+
+on: push
+
+jobs:
+  build_and_run_notebook:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Update & install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --fix-missing pandoc inkscape texlive-xetex
+        
+    - name: Install Python packages
+      run: |
+        pip install --upgrade pip
+        pip install nbconvert ipykernel pint matplotlib scipy numpy
+
+    - name: Execute and convert notebook to PDF
+      run: |
+        jupyter nbconvert --to pdf --execute ./lab_03/convergence_analysis_of_upwind.ipynb \
+          --output convergence_analysis_of_upwind.pdf
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: upwind_report_pdf
+        path: lab_03/convergence_analysis_of_upwind.pdf
