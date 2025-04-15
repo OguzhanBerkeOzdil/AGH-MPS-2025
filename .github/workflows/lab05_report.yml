@@ -14,7 +14,9 @@ jobs:
           sudo apt-get install -y --fix-missing pandoc inkscape texlive-xetex
 
       - name: Install Python packages
-        run: pip install pint nbconvert latex ipykernel matplotlib scipy numpy
+        run: |
+          pip install pint nbconvert latex ipykernel matplotlib scipy numpy
+          pip install open-atmos-jupyter-utils
 
       - name: Convert Notebook to PDF
         run: |
