@@ -21,7 +21,7 @@ jobs:
       - name: Convert Notebook to PDF
         run: |
           jupyter nbconvert --to pdf --execute ./lab_05/lab05_assignment.ipynb \
-            --output assignment.pdf
+            --output lab05_assignment.pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
