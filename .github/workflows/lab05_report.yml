@@ -5,7 +5,6 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -17,7 +16,7 @@ jobs:
       - name: Install Python packages
         run: pip install pint nbconvert latex ipykernel matplotlib scipy numpy
 
-      - name: Run notebook and convert to PDF
+      - name: Convert Notebook to PDF
         run: |
           jupyter nbconvert --to pdf --execute ./lab_05/lab05_assignment.ipynb \
             --output assignment.pdf
