@@ -1,0 +1,30 @@
+name: lab7
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update & install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --fix-missing pandoc inkscape texlive-xetex
+
+      - name: Install Python packages
+        run: |
+          pip install pint nbconvert latex ipykernel matplotlib scipy numpy
+          pip install open-atmos-jupyter-utils
+
+      - name: Convert Notebook to PDF
+        run: |
+          jupyter nbconvert --to pdf --execute ./lab_07/lab07_assignment.ipynb \
+            --output lab07_assignment.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab7-report
+          path: lab_07/lab07_assignment.pdf
