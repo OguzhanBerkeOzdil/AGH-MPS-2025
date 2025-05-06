@@ -15,8 +15,8 @@ jobs:
 
       - name: Install Python packages
         run: |
-          pip install pint nbconvert latex ipykernel matplotlib scipy numpy
-          pip install open-atmos-jupyter-utils
+          pip install pint nbconvert ipykernel matplotlib scipy numpy \
+                open-atmos-jupyter-utils numba pytest
 
       - name: Convert Notebook to PDF
         run: |
